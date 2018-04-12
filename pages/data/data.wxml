@@ -1,6 +1,3 @@
-<import src="../../dist/zanui-weapp/loadmore/index.wxml"/>
-
-
 <view>
   <view>
     选择数据类型:

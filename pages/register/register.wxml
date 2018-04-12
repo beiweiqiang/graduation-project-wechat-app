@@ -1,29 +1,52 @@
 <view>
   <text>{{ tipText }}</text>
-  <input
-    type="text"
-    focus
-    bindinput="bindUsernameInput"
-    placeholder="输入用户名"
-  />
-  <input
-    type="text"
-    bindinput="bindPasswordInput"
-    password
-    placeholder="输入密码"
-  />
-  <input
-    type="text"
-    bindinput="bindConfirmInput"
-    password
-    placeholder="重复密码"
-  />
+  <view class="page-section">
+    <view class="weui-cells__title">输入用户名</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input
+          class="weui-input"
+          bindinput="bindUsernameInput"
+        />
+      </view>
+    </view>
+  </view>
+
+  <view class="page-section">
+    <view class="weui-cells__title">输入密码</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input
+          class="weui-input"
+          type="digit"
+          bindinput="bindPasswordInput"
+          password
+        />
+      </view>
+    </view>
+  </view>
+
+  <view class="page-section">
+    <view class="weui-cells__title">重复密码</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input
+          class="weui-input"
+          type="digit"
+          bindinput="bindConfirmInput"
+          password
+        />
+      </view>
+    </view>
+  </view>
+
   <button
     type="primary"
     bindtap="register"
   >注册</button>
-  <text
+  <button
+    class="weui-btn weui-btn_default"
     bindtap="goToLogin"
-  >返回登录</text>
+  >返回登录</button>
 
 </view>

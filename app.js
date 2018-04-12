@@ -39,6 +39,7 @@ App({
     loginUrl: 'https://www.beiweiqiang.com/graduation/userLogin',
     registerUrl: 'https://www.beiweiqiang.com/graduation/userRegister',
     dataStatisticsUrl: 'https://www.beiweiqiang.com/graduation/chatHistory/dataStatistics',
-
+    tulingUrl: 'http://openapi.tuling123.com/openapi/api/v2',
+    apiKey: '369ce9acf8a6439389d77fc1e755e288',
   }
 })

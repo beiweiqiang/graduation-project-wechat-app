@@ -5,8 +5,20 @@ Page({
     username: '',
     password: '',
     tipText: '',
+    isLogin: false,
   },
   onLoad: function () {
+
+  },
+  onShow: function () {
+    this.checkIsLogin();
+  },
+  checkIsLogin: function () {
+    if (app.globalData.userId !== null) {
+      this.setData({
+        isLogin: true,
+      })
+    }
   },
   bindUsernameInput: function (e) {
     this.setData({
@@ -37,9 +49,11 @@ Page({
             const userId = res.data.data.id;
             app.globalData.userId = userId;
           //  跳转到 数据统计 页面
-            wx.navigateTo({
-              url: '../data/data',
-            })
+            console.log('login.js: 43 -> success -> ', userId);
+            self.checkIsLogin();
+            // wx.switchTab({
+            //   url: '../data/data'
+            // });
           } else {
             self.setData({
               tipText: res.data.msg,

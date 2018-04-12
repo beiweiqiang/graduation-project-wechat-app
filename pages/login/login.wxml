@@ -1,23 +1,45 @@
-<view>
+<view wx:if="{{ !isLogin }}">
+
   <text>{{ tipText }}</text>
-  <input
-    type="text"
-    focus
-    bindinput="bindUsernameInput"
-    placeholder="输入用户名"
-  />
-  <input
-    type="text"
-    bindinput="bindPasswordInput"
-    password
-    placeholder="输入密码"
-  />
+  <view class="page-section">
+    <view class="weui-cells__title">输入用户名</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input
+          class="weui-input"
+          bindinput="bindUsernameInput"
+        />
+      </view>
+    </view>
+  </view>
+
+  <view class="page-section">
+    <view class="weui-cells__title">输入密码</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input
+          class="weui-input"
+          type="digit"
+          bindinput="bindPasswordInput"
+          password
+        />
+      </view>
+    </view>
+  </view>
+
   <button
     type="primary"
     bindtap="login"
-  >登录</button>
-  <text
-    bindtap="goToRegister"
-  >注册</text>
+  >登录
+  </button>
 
+  <button
+    class="weui-btn weui-btn_default"
+    bindtap="goToRegister"
+  >注册
+  </button>
+
+</view>
+<view wx:if="{{ isLogin }}">
+  用户名: {{ username }}
 </view>

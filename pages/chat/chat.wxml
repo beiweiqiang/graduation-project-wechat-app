@@ -1,0 +1,12 @@
+<view class="page-body">
+
+  <view class="page-section">
+    <view class="weui-cells__title">输入你想问的问题</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input class="weui-input" bindinput="bindKeyInput" placeholder=""/>
+      </view>
+    </view>
+  </view>
+  <button type="primary" bindtap="submitQuestion">提问</button>
+</view>

@@ -107,14 +107,24 @@ Page({
   },
 
   onLoad: function () {
-    const self = this;
 
-    this.requestData(0, () => {
-      self.drawPieChart(self.objToSeries(self.data.responseData[0]));
-    });
-    for (let i = 1; i < 6; i++) {
-      this.requestData(i);
+  },
+
+  onShow: function () {
+    const self = this;
+    if (app.globalData.userId === null) {
+      wx.switchTab({
+        url: '../login/login'
+      });
+    } else {
+      this.requestData(0, () => {
+        self.drawPieChart(self.objToSeries(self.data.responseData[0]));
+      });
+      for (let i = 1; i < 6; i++) {
+        this.requestData(i);
+      }
     }
+
   },
 
   requestData: function (type, cb) {
