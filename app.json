@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/chat/chat",
+    "pages/data/data",
+    "pages/register/register"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Graduation Project",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#109d59",
+    "list": [
+      {
+        "pagePath": "pages/login/login",
+        "text": "数据",
+        "iconPath": "assets/images/data.png",
+        "selectedIconPath": "assets/images/data-selected.png"
+      },
+      {
+        "pagePath": "pages/chat/chat",
+        "text": "聊天",
+        "iconPath": "assets/images/chat.png",
+        "selectedIconPath": "assets/images/chat-selected.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

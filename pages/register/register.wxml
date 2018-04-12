@@ -1,0 +1,29 @@
+<view>
+  <text>{{ tipText }}</text>
+  <input
+    type="text"
+    focus
+    bindinput="bindUsernameInput"
+    placeholder="输入用户名"
+  />
+  <input
+    type="text"
+    bindinput="bindPasswordInput"
+    password
+    placeholder="输入密码"
+  />
+  <input
+    type="text"
+    bindinput="bindConfirmInput"
+    password
+    placeholder="重复密码"
+  />
+  <button
+    type="primary"
+    bindtap="register"
+  >注册</button>
+  <text
+    bindtap="goToLogin"
+  >返回登录</text>
+
+</view>

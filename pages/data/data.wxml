@@ -1,0 +1,30 @@
+<import src="../../dist/zanui-weapp/loadmore/index.wxml"/>
+
+
+<view>
+  <view>
+    选择数据类型:
+  </view>
+  <picker bindchange="bindPickerChange" value="{{typeIndex}}" range="{{typeArray}}">
+    <view class="picker">
+      {{typeArray[typeIndex]}}
+    </view>
+  </picker>
+
+  <view wx:if="{{ typeIndex > 2 }}">
+    <picker bindchange="bindSecondSelectChange" value="{{secondSelectIndex}}" range="{{secondSelectArray}}">
+      <view class="picker">
+        {{secondSelectArray[secondSelectIndex]}}
+      </view>
+    </picker>
+  </view>
+
+  <canvas
+    canvas-id="pieCanvas"
+    class="canvas"
+    style="height:300px"
+    bindtouchstart="touchHandler"
+  ></canvas>
+
+
+</view>
