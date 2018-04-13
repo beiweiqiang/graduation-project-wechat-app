@@ -19,7 +19,9 @@ Page({
     const self = this;
     wx.request({
       url: app.globalData.tulingUrl,
-      data: self.requestFormat(self.data.inputValue),
+      data: {
+        text: self.data.inputValue,
+      },
       header: {
         'content-type': 'application/json' // 默认值
       },
@@ -28,35 +30,12 @@ Page({
       success: function(res) {
         console.log('chat.js: 29 -> success -> ', res);
         if (res.statusCode === 200) {
-          if (res.data.code === 200) {
-
-          } else {
-          }
+          self.setData({
+            robotOutput: res.data.text,
+          });
         }
       }
     });
-  },
-
-  requestFormat: function (question) {
-    return {
-      "reqType":0,
-      "perception": {
-        "inputText": {
-          "text": question,
-        },
-        "selfInfo": {
-          "location": {
-            "city": "广州",
-            "province": "",
-            "street": ""
-          }
-        }
-      },
-      "userInfo": {
-        "apiKey": app.globalData.apiKey,
-        "userId": app.globalData.userId,
-      }
-    };
   },
 
   onLoad: function () {

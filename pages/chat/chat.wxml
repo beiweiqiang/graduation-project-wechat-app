@@ -9,4 +9,7 @@
     </view>
   </view>
   <button type="primary" bindtap="submitQuestion">提问</button>
+  <view>
+    {{ robotOutput }}
+  </view>
 </view>
